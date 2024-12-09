@@ -18,6 +18,12 @@ $pdf->Cell(20,7,'Diff Value',1,1,'C');
 //$pdf->Cell(30,7,'',1,1,'C');
 $total=$costofbooks=$costofarticles=0;
 foreach ($invent as $st):
+/*
+if ((($st['clbal']*$st['cost'])-($st['stock']*$st['cost']))>-1000 and (($st['clbal']*$st['cost'])-($st['stock']*$st['cost']))<1000):
+
+continue;
+endif;
+* */
 $pdf->Cell(15,7,$st['item_id'],1,0,'C');
 $pdf->Cell(80,7,substr($st['title'],0,28),1,0,'L');
 $pdf->Cell(20,7,number_format($st['rate'],2,'.',''),1,0,'C');

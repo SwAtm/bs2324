@@ -223,6 +223,9 @@ $pdf->cell(20,5,number_format($ne['interrexe']+$ne['interuexe']+$ne['intrarexe']
 
 endforeach;
 
+		if ($pdf->getY()>175):
+			$pdf->AddPage();
+		endif;
 $pdf->ln(5);
 $pdf->cell(276,5,'HSN',0,1,'C');
 $pdf->cell(35,5,'HSN Number',1,0,'L');
